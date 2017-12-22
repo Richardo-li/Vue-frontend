@@ -1,4 +1,4 @@
-
+﻿
 每个文件的用处!  
  
       dist文件夹：
@@ -14,6 +14,10 @@
               img文件夹：
 
               js文件夹：
+                       
+                    api_config.js:
+
+                    axios_config.js:  进行默认域名配置   与  开启跨域请求证书
 
               less文件夹：
  
@@ -35,7 +39,7 @@
 
       package.json:
 
-      webpack.config.js:
+      webpack.config.js:   ！！！！  很多都有这个文件打包！！！
 
 
 

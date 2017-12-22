@@ -1,0 +1,9 @@
+# webpack3 系统整体打包
+# Vue2.0
+# ES6 
+# axios ajax请求
+# Vue-Router 路由控制
+# Vuex状态数据管理
+# element UI PC端的Vue UI 界面组件
+# iView PC端的Vue UI界面组件（使用它的按需引入）
+# Vue中如何使用jQuery 以及 jQuery 插件完成的业务 （下载，引入，在mounted生命周期函数中使用）
