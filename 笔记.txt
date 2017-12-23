@@ -9,6 +9,8 @@
               
               component文件夹:
 
+                      App.vue：  除了写公共头部和底部，需要一个路由占位，才能使用路由切换页面！
+
               filter文件夹：
 
               img文件夹：
@@ -44,3 +46,27 @@
 
 
 
+
+细节：  
+
+       #组件中传值（如传一个id）  使用路由！！！！！！
+                       
+                        1.路由中的url设置 :id   { name: 'gd', path: '/goods/detail/:id', component: GoodsDetailComponent }
+       
+                        2. 当前组件 在params中保存一个id值    <router-link :to='{name:"gd",params:{id:datas.artID}}'></router-link>
+       
+                        3. 目标组件 使用  this.$route.params.id   可以获取到
+       
+       
+       
+       #如果获取到的是一个数组，需要使用  v-for='item in arr' 指令遍历数组显示，还需要定义一个 :key='item.id'  唯一值
+       
+       
+       #用了第三方插件（如放大镜）  引入该插件的js的时候会报错，说找不到jQuery，需要在该插件的 所有js中引入 import jQuery from 'jquery'
+
+
+       #在App.vue 根组件中 除了写公共头部和底部，需要一个路由占位，才能使用路由切换页面！   <router-view></router-view>
+
+
+
+       #使用插件显示数据时   异步  mounted缺点 看官网     解决方法  定时器-不太好   updated  watch  

@@ -5,8 +5,7 @@
     <header-comp></header-comp>
 
      <!-- 中间部分 -->
-     <goods-home></goods-home>
-
+     <router-view></router-view>   <!--   路由占位 -->
 
     <!-- 脚部组件 -->
     <footer-comp></footer-comp>
@@ -21,7 +20,6 @@
 import HeaderComp from "./frame/Header.vue";
 import FooterComp from "./frame/Footer.vue";
 
-import GoodsHome from "./goods/GoodsHome.vue";
 
 import $ from "jquery";   //引入jQuery !!!!!!!!!!!
 
@@ -29,7 +27,6 @@ export default {
    components:{
       headerComp:HeaderComp,
       footerComp:FooterComp,
-      goodsHome:GoodsHome
    },
     // 模版挂载到视图后执行, 这时候可以操作页面上的DOM了     jquery 操作
    mounted(){

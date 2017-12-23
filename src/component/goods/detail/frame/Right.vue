@@ -3,51 +3,18 @@
     <h4>推荐商品</h4>
     <ul class="side-img-list">
 
-      <li>
+      <li v-for='item in hotgoodslist' :key='item.id'>
         <div class="img-box">
-          <a href="/goods/show-98.html">
-            <img src="/upload/201504/20/thumb_201504200314272543.jpg">
-          </a>
+          <!-- <a href="/goods/show-98.html"> -->
+          <router-link :to='{name:"gd",params:{id:item.id}}'>
+            <img :src="item.img_url">
+          <!-- </a> -->
+          </router-link>
         </div>
         <div class="txt-box">
-          <a href="/goods/show-98.html">奔腾（BNTN） 380功放+纽约至尊 套装家庭影院</a>
-          <span>2015-04-20</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="img-box">
-          <a href="/goods/show-97.html">
-            <img src="/upload/201504/20/thumb_201504200258403759.jpg">
-          </a>
-        </div>
-        <div class="txt-box">
-          <a href="/goods/show-97.html">三星（SAMSUNG）UA40HU5920JXXZ 40英寸4K超高清</a>
-          <span>2015-04-20</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="img-box">
-          <a href="/goods/show-95.html">
-            <img src="/upload/201504/20/thumb_201504200242250674.jpg">
-          </a>
-        </div>
-        <div class="txt-box">
-          <a href="/goods/show-95.html">惠普（HP）LaserJet 2035商用黑白激光打印机（黑色）</a>
-          <span>2015-04-20</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="img-box">
-          <a href="/goods/show-94.html">
-            <img src="/upload/201504/20/thumb_201504200239192345.jpg">
-          </a>
-        </div>
-        <div class="txt-box">
-          <a href="/goods/show-94.html">金士顿（Kingston） DataTraveler SE9 32GB 金属U盘</a>
-          <span>2015-04-20</span>
+          <!-- <a href="/goods/show-98.html">{{item.title}}</a> -->
+          <router-link :to='{name:"gd",params:{id:item.id}}'>{{item.title}}</router-link>
+          <span>{{ item.add_time | date}}</span>
         </div>
       </li>
 
@@ -56,7 +23,10 @@
 </template>
 
 <script>
-export default {};
+export default {
+  //获取父组件传来的数据
+  props: ["hotgoodslist"]
+};
 </script>
 
 <style scoped>

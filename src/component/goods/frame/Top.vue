@@ -69,7 +69,9 @@
                 <img :src="item.img_url">
               </div>
               <div class="txt-box">
-                <a href="/goods/show-98.html">{{item.title}}</a>
+                <!-- <a href="/goods/show-98.html">{{item.title}}</a> -->
+                <!-- 跳转路由并传参 -->
+                <router-link :to='{name:"gd",params:{id:item.id}}'>{{ item.title}}</router-link>
                  <span>{{ item.add_time | date }}</span>
               </div>
             </li>
@@ -109,12 +111,12 @@ export default {
       this.$http.get(this.$api.goodsTop).then(rsp => {
         // console.log(rsp);
         this.topData = rsp.data.message;
-        console.log(this.topData);
+        // console.log(this.topData);
       });
     }
   },
   created() {
-    console.log(this.$api.goodsTop);
+    // console.log(this.$api.goodsTop);
 
     this.getGoodsTopData();
   }
